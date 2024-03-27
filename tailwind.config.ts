@@ -1,5 +1,5 @@
 import type { Config } from "tailwindcss";
-
+import { fontFamily } from "tailwindcss/defaultTheme";
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,9 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "hero-bg": "url('../assets/hero-line.svg')",
+      },
+      fontFamily: {
+        calibri: ["var(--font-calibri)", ...fontFamily.sans],
+        georgia: ["var(--font-georgia)", ...fontFamily.sans],
       },
     },
   },
