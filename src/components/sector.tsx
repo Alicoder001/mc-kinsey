@@ -5,7 +5,7 @@ import atomic from "../assets/atomic.png";
 import never from "../assets/never-just-tech.png";
 const Sector = () => {
   return (
-    <div className="h-full flex flex-col">
+    <div className="flex flex-col">
       <div className="flex flex-col md:flex-row h-full w-full items-center">
         <div className="book-bg w-full md:w-[50%] h-64 md:h-full overflow-hidden">
           {/* <Image className="h-full object-cover" src={atomic} alt="atomic" /> */}
