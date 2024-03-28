@@ -210,6 +210,16 @@ h1 {
 .footer p {
   font-size: 14px !important;
 }
+.sidebar-item:hover a {
+  color: #00a9f4;
+}
+.sidebar-item:hover svg {
+  fill: #00a9f4;
+}
+.sidebar-item img {
+  width: 18px;
+  height: 28px;
+}
 @media (max-width: 1180px) {
   .blog-list {
     grid-template-columns: 1fr;

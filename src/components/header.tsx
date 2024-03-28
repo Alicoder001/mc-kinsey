@@ -1,14 +1,109 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/logo.svg";
 import accordion from "../assets/accordion.svg";
 import Link from "next/link";
 import search from "../assets/search.svg";
 import hamburger from "../assets/hamburger.svg";
 import someone from "../assets/someone.png";
+import { AiOutlineClose } from "react-icons/ai";
+
 const Header = () => {
+  const [sidebar, setSidebar] = useState(false);
   return (
     <>
+      {sidebar && (
+        <div className="sidebar  z-40 fixed min-h-screen h-full w-[447px] bg-[#051C2C]">
+          <div className="flex gap-4 justify-between w-full p-4">
+            <AiOutlineClose
+              onClick={() => {
+                setSidebar(false);
+              }}
+              className="cursor-pointer"
+              size={"56px"}
+              color="white"
+            />
+            <div className="flex justify-between w-full">
+              <Image src={logo} alt="logo" />
+              <Image src={search} alt="search" />
+            </div>
+          </div>
+          <div className="w-full h-0.5 bg-[#F0F0F0] mb-12"></div>
+          <ul className="px-8 flex flex-col gap-[32px] text-white">
+            <li className="flex sidebar-item justify-between items-center">
+              <a className="sidebar-link text-[18px]" href="">
+                Industries
+              </a>
+              <Image
+                className="rotate-[270deg]"
+                src={accordion}
+                alt="accordion"
+              />
+            </li>
+            <li className="flex sidebar-item justify-between items-center">
+              <a className="sidebar-link text-[18px]" href="">
+                Capabilities
+              </a>
+              <Image
+                className="rotate-[270deg]"
+                src={accordion}
+                alt="accordion"
+              />
+            </li>
+            <li className="flex sidebar-item justify-between items-center">
+              <a className="sidebar-link text-[18px]" href="">
+                Featured Insights
+              </a>
+              <Image
+                className="rotate-[270deg]"
+                src={accordion}
+                alt="accordion"
+              />
+            </li>
+            <li className="flex sidebar-item justify-between items-center">
+              <a className="sidebar-link text-[18px]" href="">
+                Locations
+              </a>
+            </li>
+            <li className="flex sidebar-item justify-between items-center">
+              <a className="sidebar-link text-[18px]" href="">
+                Careers
+              </a>
+              <Image
+                className="rotate-[270deg]"
+                src={accordion}
+                alt="accordion"
+              />
+            </li>
+            <li className="flex sidebar-item justify-between items-center">
+              <a className="sidebar-link text-[18px]" href="">
+                About Us
+              </a>
+              <Image
+                className="rotate-[270deg]"
+                src={accordion}
+                alt="accordion"
+              />
+            </li>
+            <li className="flex sidebar-item justify-between items-center">
+              <a className="sidebar-link text-[18px]" href="">
+                McKinsey Blog
+              </a>
+            </li>
+            <li className="flex sidebar-item justify-between items-center">
+              <a className="sidebar-link text-[18px]" href="">
+                Email Subscriptions
+              </a>
+            </li>
+            <li className="flex sidebar-item justify-between items-center">
+              <a className="sidebar-link text-[18px]" href="">
+                Sign In
+              </a>
+            </li>
+          </ul>
+        </div>
+      )}
       <div className="hidden mt-2 z-30  absolute gap-[6px] items-center md:flex right-2 top-1">
         <Link
           className="px-[6px] text-[16px] font-light hover:underline underline-offset-4 font-calibri hover:text-[#2251FF] text-white"
@@ -28,6 +123,9 @@ const Header = () => {
         <div className="flex items-center shrink-0  gap-[7px]">
           <div className="shrink-0">
             <Image
+              onClick={() => {
+                setSidebar(true);
+              }}
               className="w-[70px] cursor-pointer lg:w-[90px] "
               src={hamburger}
               alt="hamburger"
@@ -71,7 +169,6 @@ const Header = () => {
               >
                 Locations
               </a>
-              <Image className="accordion" src={accordion} alt="accordion" />
             </li>
             <li className="flex items-center gap-1 nav-item">
               <a
@@ -98,7 +195,6 @@ const Header = () => {
               >
                 McKinsey Blog
               </a>
-              <Image className="accordion" src={accordion} alt="accordion" />
             </li>
           </ul>
         </nav>
