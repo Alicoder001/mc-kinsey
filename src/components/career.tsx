@@ -33,14 +33,14 @@ const Career = () => {
         </h2>
         <p className="text-white text-center">
           <Link
-            className="underline underline-offset-5 hover:bg-[#00A9F4] decoration-[#00A9F4]"
+            className="underline underline-offset-4 hover:bg-[#00A9F4] decoration-[#00A9F4]"
             href={""}
           >
             Get in touch
           </Link>
           <span className=""> with us or</span>
           <Link
-            className="underline underline-offset-5 hover:bg-[#00A9F4] decoration-[#00A9F4]"
+            className="underline underline-offset-4 hover:bg-[#00A9F4] decoration-[#00A9F4]"
             href={""}
           >
             find an office
